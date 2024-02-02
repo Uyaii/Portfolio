@@ -1,0 +1,147 @@
+.nav-bar {
+  background-color: #202020;
+  height: 100%;
+  width:100px;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  min-height: 500px;
+  position: absolute;
+
+  .logo {
+    display: block;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    img {
+      display: block;
+      margin: 8px auto;
+      width: 94px;
+      height: 80px;
+
+      &.sub-logo {
+        width: 100px;
+        color: pink;
+        
+      }
+    }
+  }
+
+  // * NAVIGATION ELEMENT
+
+  nav {
+    display: block;
+    text-align: center;
+    flex-direction: row;
+    height: 210px;
+    width: 100%;
+    margin-top: -120px;
+    position: absolute;
+    top: 50%;
+
+    a {
+      font-size: 30px;
+      color: #4d4d4e;
+      line-height: 51px;
+      height: 51px;
+      text-decoration: none;
+      display: block;
+      position: relative;
+
+      //* Logo/Icon
+
+      svg {
+        transition: all 0.3s ease-out;
+        width: 100%;
+        align-self: center;
+      }
+
+      &:hover {
+        color: #ffd700;
+
+        svg {
+          opacity: 0;
+        }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &::after {
+        // align-self: center;
+        //* pushes it back to the center
+        position: absolute;
+        bottom: 0;
+        display: block;
+        content: "";
+        font-size: 15px;
+        letter-spacing: 2px;
+        width: 100%;
+        opacity: 0;
+        text-align: center;
+        transition: all 0.3s ease-out;
+      }
+
+      &:first-child {
+        &::after {
+          content: "HOME";
+        }
+      }
+    }
+
+    // * Other routes/links
+    a.about-link {
+      &::after {
+        content: "ABOUT";
+      }
+    }
+
+    a.contact-link {
+      &::after {
+        content: "CONTACT";
+      }
+    }
+
+    a.active{
+      svg{
+          color: rgb(255, 0, 149);
+      }
+    }
+  }
+
+
+
+  // * UL ELEMENT
+ul{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: block;
+    padding:0 ;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+
+
+
+
+    li{
+        a{
+           padding: 7px 0;
+           display: block;
+           font-size: 20px;
+           line-height: 16px; 
+
+         
+        }
+          &:hover svg{
+            color:#ffd700 ;
+         
+           }
+    }
+}
+
+}
